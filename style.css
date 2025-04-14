@@ -2,9 +2,16 @@ h2{
   text-align:center;
 }
 button{
-  text-align:center;
-  background-color: #f52936;
+  background-color: #a30c16;
   color:wheat;
   border-radius:15px;
 }
-
+*{
+  background-color: darkkhaki;
+}
+#loginForm{
+  text-align: center;
+}
+p{
+  text-align: center;
+}
