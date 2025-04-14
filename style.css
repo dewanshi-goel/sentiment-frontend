@@ -1,5 +1,6 @@
 h2{
   text-align:center;
+  color:#a30c16;
 }
 button{
   background-color: #a30c16;
@@ -23,4 +24,6 @@ input[type="password"]{
 p{
   text-align: center;
 }
-
+textarea{
+  background-color:#a30c16;
+}
