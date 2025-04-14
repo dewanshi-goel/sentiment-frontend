@@ -9,9 +9,13 @@ button{
 *{
   background-color: darkkhaki;
 }
-#loginForm{
+input[type="email"]{
+  text-align: center;
+}
+input[type="password"]{
   text-align: center;
 }
 p{
   text-align: center;
 }
+
