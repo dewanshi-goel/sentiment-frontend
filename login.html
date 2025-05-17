@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login to Sentiment Analyzer</h2>
+  <form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const response = await fetch("http://127.0.0.1:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const resultElement = document.getElementById("result");
+
+      if (response.ok) {
+        resultElement.textContent = "Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "index.html"; // Redirect to sentiment analyzer
+        }, 1000);
+      } else {
+        const error = await response.json();
+        resultElement.textContent = "Login failed: " + error.detail;
+      }
+    });
+  </script>
+</body>
+</html>
