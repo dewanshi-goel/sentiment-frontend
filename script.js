@@ -1,7 +1,8 @@
 function analyzeSentiment() {
     const text = document.getElementById("text-input").value;
 
-    fetch("https://sentiment-backend-2-fdm6.onrender.com/analyze", {
+    fetch("https://sentiment-backend-3-w25d.onrender.com/analyze", {
+
         method: "POST",
         headers: {
             "Content-Type": "application/json"
